@@ -17,3 +17,8 @@ texture = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="Cursor" parent="." instance=ExtResource( 3 )]
+
+[node name="FireTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[connection signal="timeout" from="FireTimer" to="." method="_on_FireTimer_timeout"]
