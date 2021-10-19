@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+onready var water_particle = load("res://Objects/WaterParticle.tscn")
+
 #Movement
 var speed = 300
 var grav = 4000
@@ -22,6 +24,13 @@ func get_input():
 	if Input.is_action_pressed("squirt"):
 		water -= 1
 		water = min_water if water < min_water else water
+		squirt_water()
+
+func squirt_water():
+	var w = water_particle.instance()
+	w.global_position = position
+	w.apply_central_impulse($Cursor.position*10)
+	get_tree().get_root().add_child(w)
 
 func _process(delta):
 	#Movement
