@@ -9,10 +9,11 @@ var grav = 4000
 var jump = -1000
 var velocity: Vector2
 var fire_ready = true
+var fire_power = 3
 
 #Water
-var water = 500
-var min_water = 100
+var water = 100
+var min_water = 10
 
 func _ready():
 	timer.start()
@@ -34,7 +35,7 @@ func get_input():
 func squirt_water():
 	var w = water_particle.instance()
 	w.global_position = position
-	w.apply_central_impulse($Cursor.position*15)
+	w.apply_central_impulse($Cursor.position*fire_power)
 	get_tree().get_root().add_child(w)
 
 func _process(delta):
@@ -47,7 +48,7 @@ func _process(delta):
 				velocity.y = jump
 				
 	#Water Shrinking
-	scale = Vector2(water/100.0, water/100.0)
+	#scale = Vector2(water/100.0, water/100.0)
 
 func _on_FireTimer_timeout():
 	fire_ready = true
