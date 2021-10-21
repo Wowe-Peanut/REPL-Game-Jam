@@ -12,8 +12,11 @@ func update_water_level():
 
 func _on_WaterContainer_body_entered(body):
 	if "WaterParticle" in body.name:
-		body.queue_free()
-		water += body.amount
+		if water < max_water:
+			body.queue_free()
+			water += body.amount
+		
+		
 		update_water_level()
 	elif "Player" in body.name:
 		$DrainTimer.start()
