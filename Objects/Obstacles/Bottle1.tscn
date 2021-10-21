@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/bottles.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 100, 180 )
+
+[node name="Bottle1" type="StaticBody2D"]
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 625.71, 549.432, 243, 401 )
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
