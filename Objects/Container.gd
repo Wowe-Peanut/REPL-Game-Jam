@@ -9,7 +9,6 @@ func _ready():
 
 func update_water_level():
 	$WaterLevel.rect_size.y = water if water < max_water else max_water
-	print(water)
 
 func _on_WaterContainer_body_entered(body):
 	if "WaterParticle" in body.name:

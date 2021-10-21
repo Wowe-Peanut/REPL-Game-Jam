@@ -23,7 +23,10 @@ shape = SubResource( 1 )
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 512, 300 )
 
-[node name="Area2D" parent="." instance=ExtResource( 3 )]
+[node name="ParticleBounds" parent="." instance=ExtResource( 3 )]
 
 [node name="WaterContainer" parent="." instance=ExtResource( 4 )]
-position = Vector2( 100, 256 )
+position = Vector2( 100, 450 )
+
+[node name="WaterContainer2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 300, 200 )

@@ -22,6 +22,8 @@ func _ready():
 	timer.start()
 
 func _process(delta):
+	print(water)
+	
 	#Movement
 	get_input()
 	velocity.y += grav * delta
@@ -43,14 +45,19 @@ func get_input():
 	if Input.is_action_pressed("squirt") and fire_ready:
 		fire_ready = false
 		if water > min_water:
-			squirt_water()
-			water = water-water_drain if water-water_drain > min_water else min_water
+			if water-water_drain >= min_water:
+				squirt_water(water_drain)
+				water = water-water_drain
+			else:
+				squirt_water(water-min_water)
+				water = min_water
+
 	
-func squirt_water():
+func squirt_water(amount):
 	var w = water_particle.instance()
 	w.global_position = position
 	w.apply_central_impulse($Cursor.position*fire_power)
-	w.amount = water_drain
+	w.amount = amount
 	get_tree().get_root().add_child(w)
 
 func _on_FireTimer_timeout():

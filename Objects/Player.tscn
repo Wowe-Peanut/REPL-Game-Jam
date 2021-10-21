@@ -5,7 +5,7 @@
 [ext_resource path="res://Objects/Cursor.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 34.2607, 44.4737 )
+extents = Vector2( 35, 45 )
 
 [node name="Player" type="KinematicBody2D"]
 collision_layer = 2
