@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-onready var water_particle = load("res://Objects/WaterParticle.tscn")
+onready var water_particle = load("res://Objects/CharacterStuff/WaterParticle.tscn")
 onready var timer = $FireTimer
 
 #Movement
@@ -22,7 +22,6 @@ func _ready():
 	timer.start()
 
 func _process(delta):
-	#print(water)
 	
 	#Movement
 	get_input()
