@@ -1,52 +1,99 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://Assets/UI/bubble_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Assets/UI/nfw_title.png" type="Texture" id=3]
+[ext_resource path="res://Assets/dort.png" type="Texture" id=4]
+[ext_resource path="res://Assets/nfw_background.png" type="Texture" id=5]
+
+[sub_resource type="Theme" id=1]
+default_font = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.286275, 0.27451, 0.27451, 1 )
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = SubResource( 1 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="TextureRect" parent="."]
 margin_right = 1024.0
-margin_bottom = 600.0
-color = Color( 0.227451, 0.227451, 0.227451, 1 )
+margin_bottom = 1024.0
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_left = 440.0
-margin_top = 128.0
-margin_right = 593.0
-margin_bottom = 376.0
+[node name="Title" type="TextureRect" parent="."]
+margin_left = 43.3708
+margin_top = 53.3795
+margin_right = 484.371
+margin_bottom = 235.379
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FakeDort" type="TextureRect" parent="."]
+margin_left = 76.8879
+margin_top = 311.828
+margin_right = 210.888
+margin_bottom = 469.828
+texture = ExtResource( 4 )
+expand = true
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 614.976
+margin_top = 230.199
+margin_right = 936.976
+margin_bottom = 510.199
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -149.5
+margin_top = -124.0
+margin_right = 149.5
+margin_bottom = 124.0
 size_flags_horizontal = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="VBoxContainer"]
-margin_top = 93.0
-margin_right = 153.0
-margin_bottom = 107.0
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+margin_top = 13.0
+margin_right = 299.0
+margin_bottom = 80.0
 size_flags_vertical = 6
-text = "NFW"
+text = "Need For Water"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayButton" type="Button" parent="VBoxContainer"]
-margin_top = 204.0
-margin_right = 153.0
-margin_bottom = 224.0
+[node name="PlayButton" type="Button" parent="Panel/VBoxContainer"]
+margin_top = 98.0
+margin_right = 299.0
+margin_bottom = 171.0
 text = "PLAY"
 
-[node name="QuitButton" type="Button" parent="VBoxContainer"]
-margin_top = 228.0
-margin_right = 153.0
+[node name="QuitButton" type="Button" parent="Panel/VBoxContainer"]
+margin_top = 175.0
+margin_right = 299.0
 margin_bottom = 248.0
 text = "QUIT"
 
-[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
-[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
