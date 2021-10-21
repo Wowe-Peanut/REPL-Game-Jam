@@ -22,7 +22,7 @@ func _ready():
 	timer.start()
 
 func _process(delta):
-	print(water)
+	#print(water)
 	
 	#Movement
 	get_input()

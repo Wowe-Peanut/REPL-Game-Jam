@@ -11,12 +11,8 @@ config_version=4
 [application]
 
 config/name="Repl- Game- Jam"
-run/main_scene="res://Scenes/Level1.tscn"
+run/main_scene="res://Scenes/Main.tscn"
 config/icon="res://Assets/icon.png"
-
-[autoload]
-
-SceneManager="*res://scene_manager.gd"
 
 [input]
 
