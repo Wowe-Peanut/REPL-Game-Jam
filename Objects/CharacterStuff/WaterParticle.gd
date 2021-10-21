@@ -1,3 +1,4 @@
 extends RigidBody2D
 
-var amount = 0
+var amount:float = 0
+

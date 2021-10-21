@@ -1,17 +1,19 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Assets/icon.png" type="Texture" id=1]
+[ext_resource path="res://Assets/nfw_bounds.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7.89769, 35.4069 )
 
 [node name="Floor" type="StaticBody2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 512, 580 )
-scale = Vector2( 18, 0.6 )
 texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1010.69, 197.89 )
 
 [node name="Shape" type="CollisionShape2D" parent="."]
-position = Vector2( 512, 580 )
+position = Vector2( 514.67, 579.11 )
 scale = Vector2( 60, 2 )
 shape = SubResource( 1 )
