@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Objects/Obstacles/Floor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/CharacterStuff/Player.tscn" type="PackedScene" id=2]
@@ -6,20 +6,30 @@
 [ext_resource path="res://Objects/Obstacles/Container.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Objects/CharacterStuff/Dixie.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objects/World/Background.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/Obstacles/Bottle3.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Level1.gd" type="Script" id=8]
 
 [node name="Level1" type="Node2D"]
+script = ExtResource( 8 )
+starting_water = 100
 
 [node name="Background" parent="." instance=ExtResource( 6 )]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 512, 300 )
+position = Vector2( 94.4128, 500.993 )
 
 [node name="ParticleBounds" parent="." instance=ExtResource( 3 )]
+visible = false
 
 [node name="WaterContainer" parent="." instance=ExtResource( 4 )]
-position = Vector2( 100, 256 )
+position = Vector2( 712.155, 494.621 )
 
 [node name="Dixie" parent="." instance=ExtResource( 5 )]
-position = Vector2( 335.356, 74.92 )
+position = Vector2( 938.334, 496.178 )
 
 [node name="Floor" parent="." instance=ExtResource( 1 )]
+position = Vector2( -53.728, 44.053 )
+scale = Vector2( 1.1, 1 )
+
+[node name="Bottle3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 502.022, 460.723 )

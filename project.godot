@@ -14,10 +14,6 @@ config/name="Repl- Game- Jam"
 run/main_scene="res://Scenes/Main.tscn"
 config/icon="res://Assets/Sprites/dort.png"
 
-[autoload]
-
-SceneManager="*res://scene_manager.gd"
-
 [input]
 
 left={

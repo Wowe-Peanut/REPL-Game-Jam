@@ -5,8 +5,10 @@ onready var timer = $FireTimer
 
 #Movement
 var speed = 200
+var max_speed= 400
 var grav = 4000
 var jump = -1500
+var max_jump = -1800
 var friction = .25
 var accel = 0.1
 var velocity: Vector2
@@ -22,6 +24,7 @@ var fire_power = 3
 
 func _ready():
 	timer.start()
+	water = get_parent().starting_water
 
 func _process(delta):
 	#Movement
@@ -30,7 +33,8 @@ func _process(delta):
 	velocity = move_and_slide(velocity, Vector2.UP)
 	if Input.is_action_just_pressed("jump"):
 			if is_on_floor():
-				velocity.y = jump*(30/water)
+				velocity.y = clamp(jump*(30/water), max_jump, 0)
+				
 	scale = Vector2(water/100, water/100)
 
 func get_input():
@@ -41,7 +45,7 @@ func get_input():
 	if Input.is_action_pressed("left"):
 		dir -= 1
 	if dir != 0:
-		velocity.x = lerp(velocity.x, dir * speed * (100/water), accel)
+		velocity.x = clamp(lerp(velocity.x, dir * speed * (100/water), accel), -max_speed, max_speed)
 	else:
 		velocity.x = lerp(velocity.x, 0, friction)
 	

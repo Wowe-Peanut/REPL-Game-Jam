@@ -3,7 +3,6 @@
 [ext_resource path="res://Assets/Sprites/container.png" type="Texture" id=1]
 [ext_resource path="res://Objects/Obstacles/Container.gd" type="Script" id=2]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 70, 120 )
 
@@ -11,6 +10,7 @@ extents = Vector2( 70, 120 )
 extents = Vector2( 40, 20 )
 
 [node name="WaterContainer" type="Area2D"]
+scale = Vector2( 0.5, 0.5 )
 collision_layer = 2
 collision_mask = 2
 script = ExtResource( 2 )
