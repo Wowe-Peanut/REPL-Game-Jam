@@ -22,7 +22,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 margin_right = 1024.0
 margin_bottom = 1024.0
 texture = ExtResource( 5 )
@@ -30,7 +30,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Title" type="TextureRect" parent="."]
+[node name="TitleArt" type="TextureRect" parent="."]
 margin_left = 43.3708
 margin_top = 53.3795
 margin_right = 484.371
@@ -41,7 +41,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="."]
+[node name="TitlePanel" type="Panel" parent="."]
 margin_left = 85.6296
 margin_top = 274.682
 margin_right = 407.63
@@ -51,7 +51,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+[node name="TitleContainer" type="VBoxContainer" parent="TitlePanel"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -65,10 +65,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer"]
-margin_top = 13.0
+[node name="Title" type="Label" parent="TitlePanel/TitleContainer"]
 margin_right = 299.0
-margin_bottom = 80.0
+margin_bottom = 67.0
 size_flags_vertical = 6
 text = "Need For Water"
 align = 1
@@ -76,16 +75,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayButton" type="Button" parent="Panel/VBoxContainer"]
-margin_top = 98.0
+[node name="PlayButton" type="Button" parent="TitlePanel/TitleContainer"]
+margin_top = 71.0
 margin_right = 299.0
-margin_bottom = 171.0
+margin_bottom = 144.0
 text = "PLAY"
 
-[node name="QuitButton" type="Button" parent="Panel/VBoxContainer"]
-margin_top = 175.0
+[node name="Credits" type="Button" parent="TitlePanel/TitleContainer"]
+margin_top = 148.0
 margin_right = 299.0
-margin_bottom = 248.0
+margin_bottom = 221.0
+text = "CREDITS"
+
+[node name="QuitButton" type="Button" parent="TitlePanel/TitleContainer"]
+margin_top = 225.0
+margin_right = 299.0
+margin_bottom = 298.0
 text = "QUIT"
 
 [node name="FakeCharacters" type="Control" parent="."]
@@ -117,5 +122,69 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="Panel/VBoxContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
+[node name="CreditsPopup" type="Popup" parent="."]
+visible = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditsPanel" type="Panel" parent="CreditsPopup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CreditsPopup/CreditsPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditsText" type="RichTextLabel" parent="CreditsPopup/CreditsPanel/VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 523.0
+size_flags_vertical = 3
+bbcode_enabled = true
+bbcode_text = "[color=yellow]CREDITS[/color]
+					[color=aqua]Coding:[/color]
+[center]Ryan, Lance[/center]
+					[color=fuchsia]Art:[/color]
+[center]Duncan[/center]
+					[color=green]Music:[/color]
+[center]Jax[center]"
+text = "CREDITS
+					Coding:
+Ryan, Lance
+					Art:
+Duncan
+					Music:
+Jax"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Close" type="Button" parent="CreditsPopup/CreditsPanel/VBoxContainer"]
+margin_left = 200.0
+margin_top = 527.0
+margin_right = 824.0
+margin_bottom = 600.0
+text = "CLOSE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="TitlePanel/TitleContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="TitlePanel/TitleContainer/Credits" to="." method="_on_Credits_pressed"]
+[connection signal="pressed" from="TitlePanel/TitleContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="CreditsPopup/CreditsPanel/VBoxContainer/Close" to="." method="_on_Close_pressed"]
