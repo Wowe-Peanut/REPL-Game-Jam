@@ -15,4 +15,4 @@ shape = SubResource( 1 )
 scale = Vector2( 1.0035, 1 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 320, 146, 334, 821 )
+region_rect = Rect2( 320, 200, 334, 821 )

@@ -14,4 +14,4 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( -15, 146, 334, 821 )
+region_rect = Rect2( -15, 210, 334, 821 )
