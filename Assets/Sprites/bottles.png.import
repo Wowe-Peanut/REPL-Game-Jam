@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dixie.png-a45efa1a4e74288ac8466f429133b550.stex"
+path="res://.import/bottles.png-efe51a96f8eb5ec08c8a3b94a6cc2654.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/dixie.png"
-dest_files=[ "res://.import/dixie.png-a45efa1a4e74288ac8466f429133b550.stex" ]
+source_file="res://Assets/Sprites/bottles.png"
+dest_files=[ "res://.import/bottles.png-efe51a96f8eb5ec08c8a3b94a6cc2654.stex" ]
 
 [params]
 

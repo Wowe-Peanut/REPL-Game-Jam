@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/nfw_wall.png-602c3dd6d6792c9a699b3f4763546d3a.stex"
+path="res://.import/BlueCircleIMG.png-71179746d2a2bd9de7f54eba628bc7c9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/nfw_wall.png"
-dest_files=[ "res://.import/nfw_wall.png-602c3dd6d6792c9a699b3f4763546d3a.stex" ]
+source_file="res://Assets/Sprites/BlueCircleIMG.png"
+dest_files=[ "res://.import/BlueCircleIMG.png-71179746d2a2bd9de7f54eba628bc7c9.stex" ]
 
 [params]
 

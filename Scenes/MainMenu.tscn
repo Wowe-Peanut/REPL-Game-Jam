@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/UI/bubble_font.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Assets/UI/nfw_title.png" type="Texture" id=3]
-[ext_resource path="res://Assets/dort.png" type="Texture" id=4]
-[ext_resource path="res://Assets/nfw_background.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/dort.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/nfw_background.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/dixie.png" type="Texture" id=6]
 
 [sub_resource type="Theme" id=1]
 default_font = ExtResource( 2 )
@@ -40,19 +41,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="FakeDort" type="TextureRect" parent="."]
-margin_left = 76.8879
-margin_top = 311.828
-margin_right = 210.888
-margin_bottom = 469.828
-texture = ExtResource( 4 )
-expand = true
-
 [node name="Panel" type="Panel" parent="."]
-margin_left = 614.976
-margin_top = 230.199
-margin_right = 936.976
-margin_bottom = 510.199
+margin_left = 85.6296
+margin_top = 274.682
+margin_right = 407.63
+margin_bottom = 554.682
 custom_styles/panel = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -94,6 +87,35 @@ margin_top = 175.0
 margin_right = 299.0
 margin_bottom = 248.0
 text = "QUIT"
+
+[node name="FakeCharacters" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FakeDort" type="TextureRect" parent="FakeCharacters"]
+margin_left = 659.293
+margin_top = 316.0
+margin_right = 751.293
+margin_bottom = 426.0
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FakeDixie" type="TextureRect" parent="FakeCharacters"]
+margin_left = 788.914
+margin_top = 98.3276
+margin_right = 923.914
+margin_bottom = 256.328
+texture = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="pressed" from="Panel/VBoxContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]

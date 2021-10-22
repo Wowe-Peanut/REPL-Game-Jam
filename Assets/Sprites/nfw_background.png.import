@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/nfw_background.png-14736064c94ee31806e8c8f11d279c53.stex"
+path="res://.import/nfw_background.png-d01e2384361c4ce875cbe379e0e4bada.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/nfw_background.png"
-dest_files=[ "res://.import/nfw_background.png-14736064c94ee31806e8c8f11d279c53.stex" ]
+source_file="res://Assets/Sprites/nfw_background.png"
+dest_files=[ "res://.import/nfw_background.png-d01e2384361c4ce875cbe379e0e4bada.stex" ]
 
 [params]
 

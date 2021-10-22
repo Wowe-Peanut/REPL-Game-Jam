@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/nfw_bounds.png-373237deba5798973d5b0a79f3f94ead.stex"
+path="res://.import/dixie.png-8efca28205bc93ab9075b621c8ae6efb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/nfw_bounds.png"
-dest_files=[ "res://.import/nfw_bounds.png-373237deba5798973d5b0a79f3f94ead.stex" ]
+source_file="res://Assets/Sprites/dixie.png"
+dest_files=[ "res://.import/dixie.png-8efca28205bc93ab9075b621c8ae6efb.stex" ]
 
 [params]
 

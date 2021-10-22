@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BlueCircleIMG.png-5a9ca19c197fa4444cf4a198e20c77e9.stex"
+path="res://.import/nfw_bounds.png-228cc24d0e4857e85ae629ac0b4c7a2a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/BlueCircleIMG.png"
-dest_files=[ "res://.import/BlueCircleIMG.png-5a9ca19c197fa4444cf4a198e20c77e9.stex" ]
+source_file="res://Assets/Sprites/nfw_bounds.png"
+dest_files=[ "res://.import/nfw_bounds.png-228cc24d0e4857e85ae629ac0b4c7a2a.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Target Cursor.png-f332dce3d9cd85574eec3c952db7e005.stex"
+path="res://.import/dort.png-ff5993cc03e7db52efdae50651450134.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Target Cursor.png"
-dest_files=[ "res://.import/Target Cursor.png-f332dce3d9cd85574eec3c952db7e005.stex" ]
+source_file="res://Assets/Sprites/dort.png"
+dest_files=[ "res://.import/dort.png-ff5993cc03e7db52efdae50651450134.stex" ]
 
 [params]
 
