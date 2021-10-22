@@ -57,6 +57,9 @@ func get_input():
 			else:
 				squirt_water(water-min_water)
 				water = min_water
+	
+	if Input.is_action_just_pressed("restart"):
+		get_tree().get_root().get_node("Main").restart_level()
 
 func squirt_water(amount):
 	var w = water_particle.instance()
