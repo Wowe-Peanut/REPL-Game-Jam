@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/UI/bubble_font.tres" type="DynamicFont" id=2]
@@ -9,9 +9,6 @@
 
 [sub_resource type="Theme" id=1]
 default_font = ExtResource( 2 )
-
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.286275, 0.27451, 0.27451, 1 )
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -35,37 +32,24 @@ margin_left = 43.3708
 margin_top = 53.3795
 margin_right = 484.371
 margin_bottom = 235.379
+rect_pivot_offset = Vector2( 220, 0 )
 texture = ExtResource( 3 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TitlePanel" type="Panel" parent="."]
-margin_left = 85.6296
-margin_top = 274.682
-margin_right = 407.63
-margin_bottom = 554.682
-custom_styles/panel = SubResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TitleContainer" type="VBoxContainer" parent="TitlePanel"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -149.5
-margin_top = -124.0
-margin_right = 149.5
-margin_bottom = 124.0
+[node name="TitleContainer" type="VBoxContainer" parent="."]
+margin_left = 140.414
+margin_top = 272.838
+margin_right = 439.414
+margin_bottom = 570.838
 size_flags_horizontal = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Title" type="Label" parent="TitlePanel/TitleContainer"]
+[node name="Title" type="Label" parent="TitleContainer"]
 margin_right = 299.0
 margin_bottom = 67.0
 size_flags_vertical = 6
@@ -75,19 +59,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayButton" type="Button" parent="TitlePanel/TitleContainer"]
+[node name="PlayButton" type="Button" parent="TitleContainer"]
 margin_top = 71.0
 margin_right = 299.0
 margin_bottom = 144.0
 text = "PLAY"
 
-[node name="Credits" type="Button" parent="TitlePanel/TitleContainer"]
+[node name="Credits" type="Button" parent="TitleContainer"]
 margin_top = 148.0
 margin_right = 299.0
 margin_bottom = 221.0
 text = "CREDITS"
 
-[node name="QuitButton" type="Button" parent="TitlePanel/TitleContainer"]
+[node name="QuitButton" type="Button" parent="TitleContainer"]
 margin_top = 225.0
 margin_right = 299.0
 margin_bottom = 298.0
@@ -123,7 +107,6 @@ __meta__ = {
 }
 
 [node name="CreditsPopup" type="Popup" parent="."]
-visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -175,16 +158,15 @@ __meta__ = {
 }
 
 [node name="Close" type="Button" parent="CreditsPopup/CreditsPanel/VBoxContainer"]
-margin_left = 200.0
 margin_top = 527.0
-margin_right = 824.0
+margin_right = 1024.0
 margin_bottom = 600.0
 text = "CLOSE"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="TitlePanel/TitleContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
-[connection signal="pressed" from="TitlePanel/TitleContainer/Credits" to="." method="_on_Credits_pressed"]
-[connection signal="pressed" from="TitlePanel/TitleContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="TitleContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="TitleContainer/Credits" to="." method="_on_Credits_pressed"]
+[connection signal="pressed" from="TitleContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
 [connection signal="pressed" from="CreditsPopup/CreditsPanel/VBoxContainer/Close" to="." method="_on_Close_pressed"]

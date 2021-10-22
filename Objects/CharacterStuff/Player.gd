@@ -22,6 +22,9 @@ var min_water = 20
 var fire_ready = true
 var fire_power = 3
 
+#animation
+var animate_timer = 0
+
 func _ready():
 	timer.start()
 	water = get_parent().starting_water
@@ -36,6 +39,8 @@ func _process(delta):
 				velocity.y = clamp(jump*(30/water), max_jump, 0)
 				
 	scale = Vector2(water/100, water/100)
+	animate()
+	animate_timer += delta
 
 func get_input():
 	#Movement
@@ -48,9 +53,6 @@ func get_input():
 		velocity.x = clamp(lerp(velocity.x, dir * speed * (100/water), accel), -max_speed, max_speed)
 	else:
 		velocity.x = lerp(velocity.x, 0, friction)
-	
-	
-		
 	#Water
 	if Input.is_action_pressed("squirt") and fire_ready:
 		fire_ready = false
@@ -64,6 +66,10 @@ func get_input():
 	
 	if Input.is_action_just_pressed("restart"):
 		get_tree().get_root().get_node("Main").restart_level()
+
+func animate():
+	scale.y += sin(animate_timer) * .1 + 1
+	scale.x += sin(animate_timer) * .1 + 1 
 
 func squirt_water(amount):
 	var w = water_particle.instance()
