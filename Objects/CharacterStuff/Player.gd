@@ -8,7 +8,7 @@ var speed = 200
 var grav = 4000
 var jump = -1500
 var friction = .25
-var accel = 0.25
+var accel = 0.1
 var velocity: Vector2
 
 #Water
