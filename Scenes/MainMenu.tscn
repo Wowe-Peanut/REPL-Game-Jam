@@ -166,7 +166,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="HowToPlayButton" type="Button" parent="."]
+margin_left = 699.709
+margin_top = 497.838
+margin_right = 980.709
+margin_bottom = 570.838
+text = "HOW TO PLAY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="pressed" from="TitleContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="TitleContainer/Credits" to="." method="_on_Credits_pressed"]
 [connection signal="pressed" from="TitleContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
 [connection signal="pressed" from="CreditsPopup/CreditsPanel/VBoxContainer/Close" to="." method="_on_Close_pressed"]
+[connection signal="pressed" from="HowToPlayButton" to="." method="_on_HowToPlayButton_pressed"]

@@ -3,9 +3,11 @@ extends KinematicBody2D
 onready var water_particle = load("res://Objects/CharacterStuff/WaterParticle.tscn")
 onready var timer = $FireTimer
 
+onready var tutorial = get_tree().get_root().get_node("Main").get_node("HowToPlay")
+
 #Movement
 var speed = 200
-var max_speed= 400
+var max_speed = 400
 var grav = 4000
 var jump = -1500
 var max_jump = -1800
@@ -14,7 +16,7 @@ var accel = 0.1
 var velocity: Vector2
 
 #Water
-var water:float = 100
+var water: float
 var water_drain = 3
 var min_water = 20
 
@@ -27,7 +29,7 @@ var animate_timer = 0
 
 func _ready():
 	timer.start()
-	water = get_parent().starting_water
+	water = 100
 
 func _process(delta):
 	#Movement
@@ -55,24 +57,19 @@ func get_input():
 		velocity.x = lerp(velocity.x, 0, friction)
 	#Water
 	if Input.is_action_pressed("squirt") and fire_ready:
-		fire_ready = false
-		if water > min_water:
-			if water-water_drain >= min_water:
-				squirt_water(water_drain)
-				water = water-water_drain
-			else:
-				squirt_water(water-min_water)
-				water = min_water
-	
-	#Restart Level
-	if Input.is_action_just_pressed("restart"):
-		get_tree().get_root().get_node("Main").restart_level()
-	
-	#Control Menu
-	if Input.is_action_just_pressed("controls"):
-		get_tree().get_root().get_node("Main").show_controls()
-	elif Input.is_action_just_released("controls"):
-		get_tree().get_root().get_node("Main").hide_controls()
+		if tutorial.current_page != 1:
+			fire_ready = false
+			if water > min_water:
+				if water-water_drain >= min_water:
+					squirt_water(water_drain)
+					water = water-water_drain
+				else:
+					squirt_water(water-min_water)
+					water = min_water
+		else:
+			fire_ready = false
+			squirt_water(0)
+			
 
 func animate():
 	scale.y += sin(animate_timer) * .1 + 1

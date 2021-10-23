@@ -1,0 +1,95 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Objects/CharacterStuff/TutorialPlayer.tscn" type="PackedScene" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 185.712 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 429.002, 10 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 10, 196.799 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 427.194, 10 )
+
+[node name="Page1" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 35.347
+margin_top = 27.7399
+margin_right = 400.347
+margin_bottom = 94.7399
+text = "Use WASD to Move"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WASD" type="Label" parent="."]
+margin_left = 119.289
+margin_top = 27.7399
+margin_right = 235.289
+margin_bottom = 94.7399
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "WASD"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 104.0
+margin_top = 123.0
+margin_right = 920.0
+margin_bottom = 464.0
+color = Color( 0.243137, 0.243137, 0.243137, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D"]
+position = Vector2( 930.217, 288.113 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D2"]
+position = Vector2( 514.503, 112.822 )
+shape = SubResource( 2 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D3"]
+position = Vector2( 93.6163, 308.556 )
+shape = SubResource( 3 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D4"]
+position = Vector2( 514.503, 474.079 )
+shape = SubResource( 4 )
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 166.598
+margin_top = 496.0
+margin_right = 781.598
+margin_bottom = 563.0
+text = "Shoot WATER With LEFT MOUSE"
+
+[node name="WATER" type="Label" parent="."]
+margin_left = 290.614
+margin_top = 496.0
+margin_right = 430.614
+margin_bottom = 563.0
+custom_colors/font_color = Color( 0, 0.364706, 0.929412, 1 )
+text = "WATER"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TutorialPlayer" parent="." instance=ExtResource( 1 )]
+position = Vector2( 207.887, 379.236 )

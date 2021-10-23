@@ -31,6 +31,6 @@ func _on_DrainTimer_timeout():
 
 
 func _on_WaterContainer_body_exited(body):
-	if body.name == "Player":
+	if body.name == "Player" or body.name == "TutorialPlayer":
 		$DrainTimer.stop()
 

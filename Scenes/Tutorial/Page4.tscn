@@ -1,0 +1,100 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Sprites/dixie.png" type="Texture" id=1]
+[ext_resource path="res://Objects/CharacterStuff/TutorialPlayer.tscn" type="PackedScene" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 185.712 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 429.002, 10 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 10, 196.799 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 427.194, 10 )
+
+[node name="Page4" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 104.0
+margin_top = 123.0
+margin_right = 920.0
+margin_bottom = 464.0
+color = Color( 0.243137, 0.243137, 0.243137, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Labels" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Labels"]
+margin_left = 35.347
+margin_top = 27.7399
+margin_right = 1001.35
+margin_bottom = 94.7399
+text = "Bring Dixie WATER idk what to put here"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WATER" type="Label" parent="Labels"]
+margin_left = 256.391
+margin_top = 27.7399
+margin_right = 396.391
+margin_bottom = 94.7399
+custom_colors/font_color = Color( 0, 0.364706, 0.929412, 1 )
+text = "WATER"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Labels"]
+margin_left = 69.1867
+margin_top = 496.236
+margin_right = 152.187
+margin_bottom = 510.236
+text = "GOOD LUCK!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D"]
+position = Vector2( 930.217, 288.113 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D2"]
+position = Vector2( 514.503, 112.822 )
+shape = SubResource( 2 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D3"]
+position = Vector2( 93.6163, 308.556 )
+shape = SubResource( 3 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D4"]
+position = Vector2( 514.503, 474.079 )
+shape = SubResource( 4 )
+
+[node name="TutorialPlayer" parent="." instance=ExtResource( 2 )]
+position = Vector2( 207.887, 379.236 )
+
+[node name="DixieSprite" type="Sprite" parent="."]
+position = Vector2( 822.118, 410.751 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )

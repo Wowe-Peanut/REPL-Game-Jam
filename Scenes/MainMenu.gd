@@ -29,3 +29,7 @@ func _on_Credits_pressed():
 
 func _on_Close_pressed():
 	credits.hide()
+
+
+func _on_HowToPlayButton_pressed():
+	get_tree().get_root().get_node("Main").start_tutorial()

@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Objects/CharacterStuff/Player.gd" type="Script" id=1]
+[ext_resource path="res://Objects/CharacterStuff/TutorialPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/dort.png" type="Texture" id=2]
 [ext_resource path="res://Objects/CharacterStuff/Cursor.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 30.9498, 42.35 )
 
-[node name="Player" type="KinematicBody2D"]
+[node name="TutorialPlayer" type="KinematicBody2D"]
 collision_layer = 2
 script = ExtResource( 1 )
 
