@@ -1,6 +1,6 @@
 extends Area2D
 
-var water = 0
+var water:float = 0
 var max_water = 100
 var player
 
@@ -8,7 +8,12 @@ func _ready():
 	update_water_level()
 
 func update_water_level():
-	$WaterLevel.rect_size.y = water if water < max_water else max_water
+	$WaterLevel.rect_size.y = 180*(water/max_water) if water < max_water else 180
+	if water > 0:
+		$LowWaterLevel.show()
+	else:
+		$LowWaterLevel.hide()
+	
 
 func _on_WaterContainer_body_entered(body):
 	if "WaterParticle" in body.name:

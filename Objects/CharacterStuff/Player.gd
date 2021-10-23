@@ -78,8 +78,8 @@ func get_input():
 		get_tree().get_root().get_node("Main").hide_controls()
 
 func animate():
-	scale.y += sin(animate_timer) * .1 + 1
-	scale.x += sin(animate_timer) * .1 + 1 
+	scale.y *= sin(animate_timer) * .1 + 1
+	scale.x *= sin(animate_timer) * .1 + 1 
 
 func draw_path(delta):
 	path.global_scale = Vector2(2, 2)
