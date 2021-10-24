@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Objects/CharacterStuff/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/World/ParticleBoundary.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Obstacles/Container.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Level2.gd" type="Script" id=5]
+[ext_resource path="res://Objects/CharacterStuff/Dixie.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/World/Background.tscn" type="PackedScene" id=7]
+
+[node name="Level3" type="Node2D"]
+script = ExtResource( 5 )
+water_required = 150
+
+[node name="Background" parent="." instance=ExtResource( 7 )]
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 107.457, 280.522 )
+
+[node name="ParticleBounds" parent="." instance=ExtResource( 3 )]
+visible = false
+
+[node name="Dixie" parent="." instance=ExtResource( 6 )]
+position = Vector2( 945.432, 245.722 )
+
+[node name="WaterContainer" parent="." instance=ExtResource( 4 )]
+position = Vector2( 403.045, 95.8917 )
+water = 100.0

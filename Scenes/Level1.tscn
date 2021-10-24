@@ -11,7 +11,6 @@
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 8 )
-starting_water = 200
 
 [node name="Background" parent="." instance=ExtResource( 6 )]
 

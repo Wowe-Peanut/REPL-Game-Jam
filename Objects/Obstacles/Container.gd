@@ -1,6 +1,6 @@
 extends Area2D
 
-var water:float = 0
+export var water:float = 0
 var max_water = 100
 var player
 
