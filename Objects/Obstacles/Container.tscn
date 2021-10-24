@@ -17,11 +17,11 @@ collision_mask = 2
 script = ExtResource( 2 )
 
 [node name="WaterLevel" type="ColorRect" parent="."]
-margin_left = 58.0
+margin_left = 57.0
 margin_top = 90.0
-margin_right = 178.0
-margin_bottom = 120.0
-rect_rotation = 180.0
+margin_right = 176.0
+margin_bottom = 240.0
+rect_rotation = 179.0
 color = Color( 0.0980392, 0.607843, 0.745098, 1 )
 __meta__ = {
 "_edit_use_anchors_": false

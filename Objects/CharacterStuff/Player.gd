@@ -79,7 +79,7 @@ func get_input():
 
 func animate():
 	scale.y *= sin(animate_timer) * .1 + 1
-	scale.x *= sin(animate_timer) * .1 + 1 
+	scale.x *= 1 - sin(animate_timer) * .1  
 
 func draw_path(delta):
 	path.global_scale = Vector2(2, 2)

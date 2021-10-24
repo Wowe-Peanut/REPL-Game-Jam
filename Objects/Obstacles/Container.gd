@@ -8,11 +8,12 @@ func _ready():
 	update_water_level()
 
 func update_water_level():
-	$WaterLevel.rect_size.y = 180*(water/max_water) if water < max_water else 180
+	$WaterLevel.rect_size.y = 150*(water/max_water) if water < max_water else 150
 	if water > 0:
 		$LowWaterLevel.show()
 	else:
 		$LowWaterLevel.hide()
+
 	
 
 func _on_WaterContainer_body_entered(body):
