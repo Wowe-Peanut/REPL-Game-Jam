@@ -32,7 +32,6 @@ var animate_timer = 0
 func _ready():
 	timer.start()
 	water = get_parent().starting_water
-
 	
 func _process(delta):
 	#Movement
@@ -91,16 +90,16 @@ func draw_path(delta):
 	path.global_scale = Vector2(2, 2)
 	path.clear_points()
 	var pos = Vector2(0, 0)
-	var vel = Vector2(cursor.get_pos() - get_center_pos())*fire_power
+	var vel = Vector2(get_global_mouse_position() - get_center_pos())*fire_power
 	for i in 200:
 		path.add_point(pos)
-		vel.y += 2100 * delta
+		vel.y += 2130 * delta
 		pos += vel * delta
 
 func squirt_water(amount):
 	var w = water_particle.instance()
 	w.global_position = position
-	w.linear_velocity = Vector2(cursor.get_pos() - get_center_pos())*fire_power
+	w.linear_velocity = Vector2(get_global_mouse_position() - get_center_pos())*fire_power
 	w.amount = amount
 	get_tree().get_root().add_child(w)
 
