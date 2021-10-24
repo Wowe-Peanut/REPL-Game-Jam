@@ -3,10 +3,12 @@ extends KinematicBody2D
 onready var water_particle = load("res://Objects/CharacterStuff/WaterParticle.tscn")
 onready var timer = $FireTimer
 onready var path = $ProjectilePath
+onready var position2d = $Position2D
+onready var cursor = $Cursor
 
 #Movement
 var speed = 200
-var max_speed= 400
+var max_speed = 400
 var grav = 4000
 var jump = -1500
 var max_jump = -1800
@@ -15,13 +17,14 @@ var accel = 0.1
 var velocity: Vector2
 
 #Water
+var center_height = 25
 var water:float = 100
 var water_drain = 3
 var min_water = 20
 
 #Squirting
 var fire_ready = true
-var fire_power = 5
+var fire_power = 2
 
 #animation
 var animate_timer = 0
@@ -81,11 +84,14 @@ func animate():
 	scale.y *= sin(animate_timer) * .1 + 1
 	scale.x *= 1 - sin(animate_timer) * .1  
 
+func get_center_pos():
+	return Vector2(position.x, position2d.get_global_position().y - center_height)
+
 func draw_path(delta):
 	path.global_scale = Vector2(2, 2)
 	path.clear_points()
 	var pos = Vector2(0, 0)
-	var vel = $Cursor.position*fire_power
+	var vel = Vector2(cursor.get_pos() - get_center_pos())*fire_power
 	for i in 200:
 		path.add_point(pos)
 		vel.y += 2100 * delta
@@ -94,7 +100,7 @@ func draw_path(delta):
 func squirt_water(amount):
 	var w = water_particle.instance()
 	w.global_position = position
-	w.linear_velocity = $Cursor.position*fire_power
+	w.linear_velocity = Vector2(cursor.get_pos() - get_center_pos())*fire_power
 	w.amount = amount
 	get_tree().get_root().add_child(w)
 

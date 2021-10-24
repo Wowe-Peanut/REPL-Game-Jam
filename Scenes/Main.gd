@@ -19,7 +19,7 @@ func load_first_level():
 func restart_level():
 	print("Reloading Level: " + str(current_level))
 	var level_scene = get_node("Level"+str(current_level))
-	remove_child(level_scene)
+	level_scene.name = "old"
 	level_scene.queue_free()
 	add_child(load("res://Scenes/Level"+str(current_level)+".tscn").instance(), true)
 
