@@ -34,3 +34,13 @@ func _on_Close_pressed():
 
 func _on_HowToPlayButton_pressed():
 	get_tree().get_root().get_node("Main").start_tutorial()
+
+
+func _on_Mute_pressed():
+	if get_parent().muted:
+		$MainMenuMusic.play()
+		$MuteButton.text = "Mute"
+	else:
+		$MainMenuMusic.stop()
+		$MuteButton.text = "Unmute"
+	get_parent().muted = !get_parent().muted

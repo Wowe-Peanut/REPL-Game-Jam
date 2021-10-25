@@ -181,8 +181,20 @@ __meta__ = {
 stream = ExtResource( 7 )
 autoplay = true
 
+[node name="MuteButton" type="Button" parent="."]
+margin_left = 888.338
+margin_top = 19.0273
+margin_right = 994.338
+margin_bottom = 92.0273
+grow_horizontal = 2
+text = "Mute"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="pressed" from="TitleContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="TitleContainer/Credits" to="." method="_on_Credits_pressed"]
 [connection signal="pressed" from="TitleContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
 [connection signal="pressed" from="CreditsPopup/CreditsPanel/VBoxContainer/Close" to="." method="_on_Close_pressed"]
 [connection signal="pressed" from="HowToPlayButton" to="." method="_on_HowToPlayButton_pressed"]
+[connection signal="pressed" from="MuteButton" to="." method="_on_Mute_pressed"]
