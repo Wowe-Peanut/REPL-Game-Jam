@@ -4,7 +4,6 @@ onready var water_particle = load("res://Objects/CharacterStuff/WaterParticle.ts
 onready var timer = $FireTimer
 onready var path = $ProjectilePath
 onready var position2d = $Position2D
-onready var cursor = $Cursor
 
 #Movement
 var speed = 200
@@ -80,8 +79,8 @@ func get_input():
 		get_tree().get_root().get_node("Main").hide_controls()
 
 func animate():
-	scale.y *= sin(animate_timer) * .1 + 1
-	scale.x *= 1 - sin(animate_timer) * .1  
+	$Sprite.scale.y += sin(animate_timer) * .00015
+	$Sprite.scale.x += sin(animate_timer) * .00015
 
 func get_center_pos():
 	return Vector2(position.x, position2d.get_global_position().y - center_height)

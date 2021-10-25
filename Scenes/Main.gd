@@ -22,7 +22,8 @@ func restart_level():
 	var level_scene = get_node("Level"+str(current_level))
 	level_scene.name = "old"
 	level_scene.queue_free()
-	add_child(load("res://Scenes/Level"+str(current_level)+".tscn").instance(), true)
+	call_deferred("add_child", load("res://Scenes/Level"+str(current_level)+".tscn").instance(), true)
+	#add_child(load("res://Scenes/Level"+str(current_level)+".tscn").instance(), true)
 
 func next_level():
 	print("Loading Level: " + str(current_level+1))
@@ -30,7 +31,8 @@ func next_level():
 	get_node("Level"+str(current_level)).queue_free()
 	current_level += 1
 	# Load and instance new level, then add it as a child of Main
-	add_child(load("res://Scenes/Level"+str(current_level)+".tscn").instance(), true)
+	call_deferred("add_child", load("res://Scenes/Level"+str(current_level)+".tscn").instance(), true)
+	#add_child(load("res://Scenes/Level"+str(current_level)+".tscn").instance(), true)
 
 func show_controls():
 	for child in control_menu.get_children():
