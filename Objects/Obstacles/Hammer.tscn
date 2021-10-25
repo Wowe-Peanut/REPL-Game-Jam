@@ -1,18 +1,26 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assets/nfw_wall.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Sprites/nfw_wall.png" type="Texture" id=1]
+[ext_resource path="res://Assets/blue_rect.jpg" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 126.607, 226.547 )
+extents = Vector2( 125.646, 90.6493 )
 
 [node name="Hammer" type="StaticBody2D"]
 scale = Vector2( 0.5, 0.5 )
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
-position = Vector2( -12.0525, 0 )
+position = Vector2( -9.93434, -154.627 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 603.582, 38.274, 342, 517 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+modulate = Color( 0, 0, 0, 0.415686 )
+position = Vector2( 19.2203, 74.2581 )
+rotation = -0.0453786
+scale = Vector2( 0.185493, 0.721791 )
+texture = ExtResource( 2 )
