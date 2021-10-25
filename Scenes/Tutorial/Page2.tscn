@@ -17,15 +17,15 @@ extents = Vector2( 427.194, 10 )
 
 [node name="Page2" type="Node2D"]
 
-[node name="Label" type="Label" parent="."]
-margin_left = 35.347
-margin_top = 27.7399
-margin_right = 400.347
-margin_bottom = 94.7399
+[node name="Label" type="RichTextLabel" parent="."]
+margin_left = 35.0
+margin_top = 28.0
+margin_right = 942.0
+margin_bottom = 95.0
+bbcode_enabled = true
+bbcode_text = "As You Shoot [color=blue]WATER[/color], You Get Smaller..."
 text = "As You Shoot WATER, You Get Smaller..."
-__meta__ = {
-"_edit_use_anchors_": false
-}
+scroll_active = false
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_left = 104.0
@@ -71,6 +71,7 @@ margin_bottom = 563.0
 text = "...But You Can Jump Higher"
 
 [node name="WATER" type="Label" parent="."]
+visible = false
 margin_left = 306.178
 margin_top = 27.7399
 margin_right = 446.178

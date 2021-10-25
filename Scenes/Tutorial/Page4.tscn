@@ -34,17 +34,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Labels"]
+[node name="Label" type="RichTextLabel" parent="Labels"]
 margin_left = 35.347
 margin_top = 27.7399
 margin_right = 1001.35
 margin_bottom = 94.7399
-text = "Bring Dixie WATER idk what to put here"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+bbcode_enabled = true
+bbcode_text = "Get big to impress [color=fuchsia]Dixie[/color]!"
+text = "Get big to impress Dixie!"
+scroll_active = false
 
 [node name="WATER" type="Label" parent="Labels"]
+visible = false
 margin_left = 256.391
 margin_top = 27.7399
 margin_right = 396.391

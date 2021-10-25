@@ -30,6 +30,9 @@ margin_top = 496.0
 margin_right = 990.0
 margin_bottom = 569.0
 text = "NEXT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Page1" parent="." instance=ExtResource( 1 )]
 

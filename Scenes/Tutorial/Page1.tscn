@@ -16,17 +16,18 @@ extents = Vector2( 427.194, 10 )
 
 [node name="Page1" type="Node2D"]
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="RichTextLabel" parent="."]
 margin_left = 35.347
 margin_top = 27.7399
 margin_right = 400.347
 margin_bottom = 94.7399
+bbcode_enabled = true
+bbcode_text = "Use WASD to [color=red]Move[/color]"
 text = "Use WASD to Move"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+scroll_active = false
 
 [node name="WASD" type="Label" parent="."]
+visible = false
 margin_left = 119.289
 margin_top = 27.7399
 margin_right = 235.289
@@ -73,14 +74,18 @@ shape = SubResource( 3 )
 position = Vector2( 514.503, 474.079 )
 shape = SubResource( 4 )
 
-[node name="Label2" type="Label" parent="."]
+[node name="Label2" type="RichTextLabel" parent="."]
 margin_left = 166.598
 margin_top = 496.0
 margin_right = 781.598
 margin_bottom = 563.0
+bbcode_enabled = true
+bbcode_text = "Shoot [color=blue]WATER[/color] With LEFT MOUSE"
 text = "Shoot WATER With LEFT MOUSE"
+scroll_active = false
 
 [node name="WATER" type="Label" parent="."]
+visible = false
 margin_left = 290.614
 margin_top = 496.0
 margin_right = 430.614
