@@ -43,58 +43,18 @@ bbcode_enabled = true
 bbcode_text = "[color=yellow]BOTTLES[/color] Can Store Your [color=blue]WATER[/color]. You Can Stand"
 text = "BOTTLES Can Store Your WATER. You Can Stand"
 scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label2" type="RichTextLabel" parent="Labels"]
-margin_left = 40.0
-margin_top = 496.0
-margin_right = 664.0
-margin_bottom = 563.0
+margin_left = 39.0
+margin_top = 495.132
+margin_right = 763.0
+margin_bottom = 571.132
 bbcode_enabled = true
-bbcode_text = "...on a [color=yellow]BOTTLE[/color] to Soak up its [color=blue]WATER[/color]"
-text = "...on a BOTTLE to Soak up its WATER"
-scroll_active = false
-
-[node name="WATER" type="Label" parent="Labels"]
-visible = false
-margin_left = 524.631
-margin_top = 27.7399
-margin_right = 664.631
-margin_bottom = 94.7399
-custom_colors/font_color = Color( 0, 0.364706, 0.929412, 1 )
-text = "WATER"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="WATER2" type="Label" parent="Labels"]
-visible = false
-margin_left = 605.356
-margin_top = 496.0
-margin_right = 745.356
-margin_bottom = 563.0
-custom_colors/font_color = Color( 0, 0.364706, 0.929412, 1 )
-text = "WATER"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="BOTTLE" type="Label" parent="Labels"]
-visible = false
-margin_left = 35.347
-margin_top = 27.7399
-margin_right = 209.347
-margin_bottom = 94.7399
-custom_colors/font_color = Color( 0.847059, 0.913725, 0.054902, 1 )
-text = "BOTTLES"
-
-[node name="BOTTLE2" type="Label" parent="Labels"]
-visible = false
-margin_left = 166.598
-margin_top = 496.0
-margin_right = 340.598
-margin_bottom = 563.0
-custom_colors/font_color = Color( 0.847059, 0.913725, 0.054902, 1 )
-text = "BOTTLE"
+bbcode_text = "on a [color=yellow]BOTTLE[/color] to Soak Up its [color=blue]WATER[/color]"
+text = "on a BOTTLE to Soak Up its WATER"
 
 [node name="Walls" type="Node2D" parent="."]
 

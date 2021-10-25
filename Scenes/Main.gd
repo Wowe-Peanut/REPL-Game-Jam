@@ -2,16 +2,19 @@ extends Node2D
 
 onready var main_menu = $MainMenu
 onready var control_menu = $Controls
+onready var resetCounter = $CanvasLayer/ResetCounter
 var current_level = 1
+var resets = 0
 
 var muted = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	hide_controls()
+	resetCounter.visible = false
+
 
 func load_first_level():
-	print("Loading Level: 1")
+	resetCounter.visible = true
 	# Disable menu
 	main_menu.visible = false
 	# Load and instance first level, then add it as a child of Main
@@ -21,29 +24,25 @@ func load_first_level():
 		$GameMusic.play()
 
 func restart_level():
-	print("Reloading Level: " + str(current_level))
+	# Update Reset Counter
+	resets += 1
+	resetCounter.text = "RESETS: " + str(resets)
+	# Delete previous level node
 	var level_scene = get_node("Level"+str(current_level))
 	level_scene.name = "old"
 	level_scene.queue_free()
+	# Add new instance as a child of main node
 	call_deferred("add_child", load("res://Scenes/Level"+str(current_level)+".tscn").instance(), true)
-	#add_child(load("res://Scenes/Level"+str(current_level)+".tscn").instance(), true)
 
 func next_level():
-	print("Loading Level: " + str(current_level+1))
 	# Delete current level node
-	get_node("Level"+str(current_level)).queue_free()
+	var level_scene = get_node("Level"+str(current_level))
+	level_scene.name = "old"
+	level_scene.queue_free()
 	current_level += 1
 	# Load and instance new level, then add it as a child of Main
 	call_deferred("add_child", load("res://Scenes/Level"+str(current_level)+".tscn").instance(), true)
-	#add_child(load("res://Scenes/Level"+str(current_level)+".tscn").instance(), true)
 
-func show_controls():
-	for child in control_menu.get_children():
-		child.show()
-
-func hide_controls():
-	for child in control_menu.get_children():
-		child.hide()
 
 func start_tutorial():
 	main_menu.visible = false

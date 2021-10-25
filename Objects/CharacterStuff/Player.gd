@@ -70,13 +70,9 @@ func get_input():
 	
 	#Restart Level
 	if Input.is_action_just_pressed("restart"):
+		print("hi")
 		get_tree().get_root().get_node("Main").restart_level()
-	
-	#Control Menu
-	if Input.is_action_just_pressed("controls"):
-		get_tree().get_root().get_node("Main").show_controls()
-	elif Input.is_action_just_released("controls"):
-		get_tree().get_root().get_node("Main").hide_controls()
+		
 
 func animate():
 	$Sprite.scale.y += sin(animate_timer) * .00015
