@@ -2,15 +2,26 @@
 
 [ext_resource path="res://Scenes/Main.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/MainMenu.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Objects/World/ControlMenu.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Sounds/sponge.mp3" type="AudioStream" id=4]
+[ext_resource path="res://Assets/UI/bubble_font.tres" type="DynamicFont" id=5]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="MainMenu" parent="." instance=ExtResource( 2 )]
 
-[node name="Controls" parent="." instance=ExtResource( 3 )]
-
 [node name="GameMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ResetCounter" type="Label" parent="CanvasLayer"]
+margin_left = 38.0
+margin_top = 25.0
+margin_right = 278.0
+margin_bottom = 116.0
+custom_fonts/font = ExtResource( 5 )
+text = "RESETS: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
