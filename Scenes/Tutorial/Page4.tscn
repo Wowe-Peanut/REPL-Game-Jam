@@ -40,8 +40,8 @@ margin_top = 27.7399
 margin_right = 1001.35
 margin_bottom = 94.7399
 bbcode_enabled = true
-bbcode_text = "Get big to impress [color=fuchsia]Dixie[/color]!"
-text = "Get big to impress Dixie!"
+bbcode_text = "Get huge to impress [color=fuchsia]Dixie[/color]!"
+text = "Get huge to impress Dixie!"
 scroll_active = false
 
 [node name="WATER" type="Label" parent="Labels"]
