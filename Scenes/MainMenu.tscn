@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/UI/bubble_font.tres" type="DynamicFont" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Assets/Sprites/dort.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Sprites/nfw_background.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Sprites/dixie.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sounds/Game_Jam_Theme.mp3" type="AudioStream" id=7]
 
 [sub_resource type="Theme" id=1]
 default_font = ExtResource( 2 )
@@ -144,14 +145,14 @@ bbcode_text = "[color=yellow]CREDITS[/color]
 					[color=fuchsia]Art:[/color]
 [center]Duncan[/center]
 					[color=green]Music:[/color]
-[center]Jax[center]"
+[center]Jax, Mason[center]"
 text = "CREDITS
 					Coding:
 Ryan, Lance
 					Art:
 Duncan
 					Music:
-Jax"
+Jax, Mason"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -175,6 +176,10 @@ text = "HOW TO PLAY"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="MainMenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+autoplay = true
 
 [connection signal="pressed" from="TitleContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="TitleContainer/Credits" to="." method="_on_Credits_pressed"]

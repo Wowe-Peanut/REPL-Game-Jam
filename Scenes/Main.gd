@@ -15,6 +15,7 @@ func load_first_level():
 	# Load and instance first level, then add it as a child of Main
 	add_child(load("res://Scenes/Level1.tscn").instance(), true)
 	current_level = 1
+	$GameMusic.play()
 
 func restart_level():
 	print("Reloading Level: " + str(current_level))

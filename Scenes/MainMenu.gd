@@ -18,6 +18,7 @@ func _process(delta):
 func _on_PlayButton_pressed():
 	# Load the first level
 	get_tree().get_root().get_node("Main").load_first_level()
+	$MainMenuMusic.stop()
 
 func _on_QuitButton_pressed():
 	get_tree().quit()
