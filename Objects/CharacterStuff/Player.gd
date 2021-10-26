@@ -4,6 +4,7 @@ onready var water_particle = load("res://Objects/CharacterStuff/WaterParticle.ts
 onready var timer = $FireTimer
 onready var path = $ProjectilePath
 onready var position2d = $Position2D
+onready var main = get_tree().get_root().get_node("Main")
 
 #Movement
 var speed = 200
@@ -45,6 +46,9 @@ func _process(delta):
 	animate()
 	animate_timer += delta
 	draw_path(delta)
+	print(water)
+	print(get_parent().water_required)
+	main.update_water(clamp((water - min_water) / (get_parent().water_required - min_water) * 100, 0, 100))
 
 func get_input():
 	#Movement
@@ -70,8 +74,7 @@ func get_input():
 	
 	#Restart Level
 	if Input.is_action_just_pressed("restart"):
-		print("hi")
-		get_tree().get_root().get_node("Main").restart_level()
+		main.restart_level()
 		
 
 func animate():

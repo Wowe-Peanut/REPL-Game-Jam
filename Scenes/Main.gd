@@ -1,8 +1,7 @@
 extends Node2D
 
 onready var main_menu = $MainMenu
-onready var control_menu = $Controls
-onready var resetCounter = $CanvasLayer/ResetCounter
+onready var ui = $UI
 var current_level = 1
 var resets = 0
 
@@ -10,11 +9,14 @@ var muted = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	resetCounter.visible = false
+	set_ui_visible(false)
 
+func set_ui_visible(shown):
+	for child in ui.get_children():
+		child.visible = shown
 
 func load_first_level():
-	resetCounter.visible = true
+	set_ui_visible(true)
 	# Disable menu
 	main_menu.visible = false
 	# Load and instance first level, then add it as a child of Main
@@ -26,7 +28,7 @@ func load_first_level():
 func restart_level():
 	# Update Reset Counter
 	resets += 1
-	resetCounter.text = "RESETS: " + str(resets)
+	ui.get_node("ResetCounter").text = "RESETS: " + str(resets)
 	# Delete previous level node
 	var level_scene = get_node("Level"+str(current_level))
 	level_scene.name = "old"
@@ -51,3 +53,7 @@ func start_tutorial():
 func end_tutorial():
 	get_node("HowToPlay").queue_free()
 	main_menu.visible = true
+
+
+func update_water(new_water):
+	ui.get_node("WaterMeter").value = new_water
