@@ -37,13 +37,18 @@ func restart_level():
 	call_deferred("add_child", load("res://Scenes/Level"+str(current_level)+".tscn").instance(), true)
 
 func next_level():
-	# Delete current level node
-	var level_scene = get_node("Level"+str(current_level))
-	level_scene.name = "old"
-	level_scene.queue_free()
-	current_level += 1
-	# Load and instance new level, then add it as a child of Main
-	call_deferred("add_child", load("res://Scenes/Level"+str(current_level)+".tscn").instance(), true)
+	if current_level != 8:
+		# Delete current level node
+		var level_scene = get_node("Level"+str(current_level))
+		level_scene.name = "old"
+		level_scene.queue_free()
+		current_level += 1
+		# Load and instance new level, then add it as a child of Main
+		call_deferred("add_child", load("res://Scenes/Level"+str(current_level)+".tscn").instance(), true)
+	else:
+		get_node("Level" + str(current_level)).queue_free()
+		set_ui_visible(false)
+		call_deferred("add_child", load("res://Scenes/EndingCutscene.tscn").instance())
 
 
 func start_tutorial():
