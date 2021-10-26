@@ -46,9 +46,12 @@ func next_level():
 		# Load and instance new level, then add it as a child of Main
 		call_deferred("add_child", load("res://Scenes/Level"+str(current_level)+".tscn").instance(), true)
 	else:
-		get_node("Level" + str(current_level)).queue_free()
+		var level_scene = get_node("Level"+str(current_level))
+		level_scene.name = "old"
+		level_scene.queue_free()
 		set_ui_visible(false)
 		call_deferred("add_child", load("res://Scenes/EndingCutscene.tscn").instance())
+		$GameMusic.stop()
 
 
 func start_tutorial():
