@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/193406__qubodup__urbanwaterflow.mp3-644ebbc5dd119a918bef2cc9f12592ff.mp3str"
+
+[deps]
+
+source_file="res://193406__qubodup__urbanwaterflow.mp3"
+dest_files=[ "res://.import/193406__qubodup__urbanwaterflow.mp3-644ebbc5dd119a918bef2cc9f12592ff.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

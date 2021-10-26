@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Squirting.mp3-85780c820fd5943543d0b7fa19a93d8b.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Squirting.mp3"
+dest_files=[ "res://.import/Squirting.mp3-85780c820fd5943543d0b7fa19a93d8b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
