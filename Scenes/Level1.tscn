@@ -7,7 +7,7 @@
 [ext_resource path="res://Objects/CharacterStuff/Dixie.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objects/World/Background.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objects/Obstacles/Bottle3.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Level1.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/LevelBase.gd" type="Script" id=8]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 8 )

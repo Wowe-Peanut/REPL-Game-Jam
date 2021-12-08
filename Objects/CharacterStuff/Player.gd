@@ -4,6 +4,8 @@ onready var water_particle = load("res://Objects/CharacterStuff/WaterParticle.ts
 onready var timer = $FireTimer
 onready var path = $ProjectilePath
 onready var position2d = $Position2D
+onready var squirt = $Squirt
+onready var main = get_tree().get_root().get_node("Main")
 
 #Movement
 var speed = 200
@@ -45,6 +47,7 @@ func _process(delta):
 	animate()
 	animate_timer += delta
 	draw_path(delta)
+	main.update_water(clamp((water - min_water) / (get_parent().water_required - min_water) * 100, 0, 100))
 
 func get_input():
 	#Movement
@@ -58,20 +61,26 @@ func get_input():
 	else:
 		velocity.x = lerp(velocity.x, 0, friction)
 	#Water
-	if Input.is_action_pressed("squirt") and fire_ready:
-		fire_ready = false
-		if water > min_water:
-			if water-water_drain >= min_water:
-				squirt_water(water_drain)
-				water = water-water_drain
-			else:
-				squirt_water(water-min_water)
-				water = min_water
+	if Input.is_action_pressed("squirt"):
+		if(not squirt.playing and water > min_water):
+			squirt.play()
+		elif water == min_water:
+			squirt.stop()
+		if fire_ready:
+			fire_ready = false
+			if water > min_water:
+				if water-water_drain >= min_water:
+					squirt_water(water_drain)
+					water = water-water_drain
+				else:
+					squirt_water(water-min_water)
+					water = min_water
+	else:
+		squirt.stop()
 	
 	#Restart Level
 	if Input.is_action_just_pressed("restart"):
-		print("hi")
-		get_tree().get_root().get_node("Main").restart_level()
+		main.restart_level()
 		
 
 func animate():

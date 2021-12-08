@@ -180,6 +180,7 @@ __meta__ = {
 [node name="MainMenuMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 autoplay = true
+bus = "Game"
 
 [node name="MuteButton" type="Button" parent="."]
 margin_left = 888.338

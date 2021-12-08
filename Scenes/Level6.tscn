@@ -1,6 +1,6 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Objects/Obstacles/Bottle3.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/Obstacles/Cord.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/CharacterStuff/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objects/World/ParticleBoundary.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/Obstacles/Container.tscn" type="PackedScene" id=4]
@@ -8,12 +8,11 @@
 [ext_resource path="res://Objects/CharacterStuff/Dixie.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objects/World/Background.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Objects/Obstacles/Floor.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Objects/Obstacles/Bottle1.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Objects/Obstacles/Mop.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Objects/Obstacles/Vacuum.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Objects/Obstacles/Hammer.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Objects/Obstacles/Bottle4.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Objects/Obstacles/Bottle2.tscn" type="PackedScene" id=12]
 
-[node name="Level3" type="Node2D"]
+[node name="Level6" type="Node2D"]
 script = ExtResource( 5 )
 
 [node name="Background" parent="." instance=ExtResource( 7 )]
@@ -25,28 +24,29 @@ position = Vector2( 194.217, 487.148 )
 visible = false
 
 [node name="Dixie" parent="." instance=ExtResource( 6 )]
-position = Vector2( 889.495, 492.304 )
+position = Vector2( 855.248, 510.569 )
 
 [node name="WaterContainer" parent="." instance=ExtResource( 4 )]
-position = Vector2( 310.577, 487.454 )
-
-[node name="Mop" parent="." instance=ExtResource( 10 )]
-position = Vector2( 66.2117, 348.182 )
+position = Vector2( 287.745, 182.652 )
 
 [node name="Floor" parent="." instance=ExtResource( 8 )]
-position = Vector2( -38.8138, 37.6721 )
+position = Vector2( -118.724, 55.9374 )
+scale = Vector2( 1.25, 1 )
 
-[node name="Bottle1" parent="." instance=ExtResource( 9 )]
-position = Vector2( 584.692, 456.914 )
+[node name="Hammer" parent="." instance=ExtResource( 10 )]
+position = Vector2( 428.093, 447.5 )
+
+[node name="Cord" parent="." instance=ExtResource( 1 )]
+position = Vector2( 542.318, 373.296 )
+scale = Vector2( 0.25, 0.25 )
 
 [node name="Bottle4" parent="." instance=ExtResource( 11 )]
-position = Vector2( 680.382, 457.774 )
+position = Vector2( 676.388, 435.848 )
+scale = Vector2( 0.7, 0.7 )
 
-[node name="Bottle5" parent="." instance=ExtResource( 11 )]
-position = Vector2( 487.455, 456.632 )
+[node name="Vacuum" parent="." instance=ExtResource( 9 )]
+position = Vector2( -18.2655, 273.98 )
+scale = Vector2( 0.75, 0.75 )
 
-[node name="Bottle2" parent="." instance=ExtResource( 12 )]
-position = Vector2( 392.704, 460.057 )
-
-[node name="Bottle3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 769.426, 455.491 )
+[node name="Floor2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2.28317, -611.887 )

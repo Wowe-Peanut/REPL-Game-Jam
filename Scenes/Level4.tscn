@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Objects/Obstacles/Bottle3.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/CharacterStuff/Player.tscn" type="PackedScene" id=2]
@@ -8,45 +8,42 @@
 [ext_resource path="res://Objects/CharacterStuff/Dixie.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objects/World/Background.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Objects/Obstacles/Floor.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Objects/Obstacles/Bottle1.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Objects/Obstacles/Mop.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Objects/Obstacles/Bottle4.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Objects/Obstacles/Bottle2.tscn" type="PackedScene" id=12]
 
-[node name="Level3" type="Node2D"]
+[node name="Level4" type="Node2D"]
 script = ExtResource( 5 )
 
 [node name="Background" parent="." instance=ExtResource( 7 )]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 194.217, 487.148 )
+position = Vector2( 309.663, 512.614 )
 
 [node name="ParticleBounds" parent="." instance=ExtResource( 3 )]
 visible = false
 
 [node name="Dixie" parent="." instance=ExtResource( 6 )]
-position = Vector2( 889.495, 492.304 )
+position = Vector2( 855.248, 510.569 )
 
 [node name="WaterContainer" parent="." instance=ExtResource( 4 )]
-position = Vector2( 310.577, 487.454 )
-
-[node name="Mop" parent="." instance=ExtResource( 10 )]
-position = Vector2( 66.2117, 348.182 )
+position = Vector2( 140.862, 334.746 )
 
 [node name="Floor" parent="." instance=ExtResource( 8 )]
-position = Vector2( -38.8138, 37.6721 )
+position = Vector2( -107.309, 69.6365 )
+scale = Vector2( 1.2, 1 )
 
-[node name="Bottle1" parent="." instance=ExtResource( 9 )]
-position = Vector2( 584.692, 456.914 )
+[node name="Floor2" parent="." instance=ExtResource( 8 )]
+position = Vector2( -4.56628, -533.118 )
 
-[node name="Bottle4" parent="." instance=ExtResource( 11 )]
-position = Vector2( 680.382, 457.774 )
-
-[node name="Bottle5" parent="." instance=ExtResource( 11 )]
-position = Vector2( 487.455, 456.632 )
-
-[node name="Bottle2" parent="." instance=ExtResource( 12 )]
-position = Vector2( 392.704, 460.057 )
+[node name="Floor3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1093.52, -147.117 )
+rotation = 1.5708
+scale = Vector2( 0.6, 1 )
 
 [node name="Bottle3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 769.426, 455.491 )
+position = Vector2( 144.308, 487.251 )
+
+[node name="Mop" parent="." instance=ExtResource( 10 )]
+position = Vector2( 33.9548, 373.503 )
+
+[node name="WaterContainer2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 628.164, 351.432 )
